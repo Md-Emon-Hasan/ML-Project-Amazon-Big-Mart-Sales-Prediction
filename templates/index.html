@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Mart Sales Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="form-card">
+            <h1>Amazon Mart Sales Prediction</h1>
+            <h2 class="text-center mb-4">Made By Emon Hasan</h2>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="Item_Fat">Item Fat Content:</label>
+                    <select name="Item_Fat" id="Item_Fat" class="form-control">
+                        {% for Item_Fat in Item_Fats %}
+                            <option value="{{ Item_Fat }}">{{ Item_Fat }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Item_Type">Item Type:</label>
+                    <select name="Item_Type" id="Item_Type" class="form-control">
+                        {% for Item_Type in Item_Types %}
+                            <option value="{{ Item_Type }}">{{ Item_Type }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Outlet_Identifier">Outlet Identifier:</label>
+                    <select name="Outlet_Identifier" id="Outlet_Identifier" class="form-control">
+                        {% for Outlet_Identifier in Outlet_Identifiers %}
+                            <option value="{{ Outlet_Identifier }}">{{ Outlet_Identifier }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Outlet_Establishment_Year">Outlet Establishment Year:</label>
+                    <select name="Outlet_Establishment_Year" id="Outlet_Establishment_Year" class="form-control">
+                        {% for Outlet_Establishment_Year in Outlet_Establishment_Years %}
+                            <option value="{{ Outlet_Establishment_Year }}">{{ Outlet_Establishment_Year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Outlet_Size">Outlet Size:</label>
+                    <select name="Outlet_Size" id="Outlet_Size" class="form-control">
+                        {% for Outlet_Size in Outlet_Sizes %}
+                            <option value="{{ Outlet_Size }}">{{ Outlet_Size }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Outlet_Location_Type">Outlet Location Type:</label>
+                    <select name="Outlet_Location_Type" id="Outlet_Location_Type" class="form-control">
+                        {% for Outlet_Location_Type in Outlet_Location_Types %}
+                            <option value="{{ Outlet_Location_Type }}">{{ Outlet_Location_Type }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Outlet_Type">Outlet Type:</label>
+                    <select name="Outlet_Type" id="Outlet_Type" class="form-control">
+                        {% for Outlet_Type in Outlet_Types %}
+                            <option value="{{ Outlet_Type }}">{{ Outlet_Type }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Predict Item Outlet Sales</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Amazon Mart. Designed by <a href="https://github.com/Md-Emon-Hasan">Md Emon Hasan</a>. All rights reserved.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
